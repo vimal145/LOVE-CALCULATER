@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/img/favicon.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Foldit:wght@100;200&family=Mukta:wght@200;300&family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>LOVE CALCULATOR</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .bigContainer {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        background-image: url(/img/bg.jpg);
+        background-position: center;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+      .container {
+        overflow: hidden;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 8% 0%;
+      }
+      .container h1 {
+        width: 30vw;
+        text-align: center;
+        font-size: 2vmax;
+        margin: 1vmax 0;
+        font-family: "Foldit", cursive;
+        font-family: "Mukta", sans-serif;
+        font-family: "Roboto", sans-serif;
+        font-family: "Roboto Slab", serif;
+      }
+      .container input {
+        height: 3vw;
+        width: 30vw;
+        text-align: center;
+        border-radius: 5vmax;
+        background-color: rgba(0, 0, 0, 0.404);
+        color: white;
+        font-size: 1.5vmax;
+        margin: 1vmax 0;
+        font-family: "Foldit", cursive;
+        font-family: "Mukta", sans-serif;
+        font-family: "Roboto", sans-serif;
+        font-family: "Roboto Slab", serif;
+      }
+      .container button {
+        height: 3vw;
+        width: 20vw;
+        text-align: center;
+        border-radius: 5vmax;
+        background-color: rgb(42, 158, 200);
+        font-size: 1vmax;
+        margin: 1vmax 0;
+        border: none;
+        font-family: "Foldit", cursive;
+        font-family: "Mukta", sans-serif;
+        font-family: "Roboto", sans-serif;
+        font-family: "Roboto Slab", serif;
+        box-shadow: 0px 2px black;
+      }
+      ::placeholder{
+        color: white;
+      }
+      .container button:hover {
+        cursor: pointer;
+        background-color: rgb(24, 170, 223);
+      }
+      #message{
+        color: white;
+        background-color: rgba(0, 0, 0, 0.456);
+        border-radius: 1vmax;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="bigContainer">
+      <div class="container">
+        <h1>What is your name:</h1>
+        <input
+          type="text"
+          name=""
+          id="userInput1"
+          placeholder="Type Your name here: "
+        />
+
+        <h1>What is your crush name:</h1>
+        <input
+          type="text"
+          name=""
+          id="userInput2"
+          placeholder="Type your crush name here: "
+        />
+
+        <button type="submit" onclick="myFunction()">Submit</button>
+        <h1 id="message"></h1>
+      </div>
+    </div>
+  </body>
+  <script>
+    function myFunction() {
+      let userInput1 = document.querySelector("#userInput1");
+      let userInput2 = document.querySelector("#userInput2");
+      let message = document.querySelector("#message");
+
+      message.innerHTML =
+        userInput1.value +
+        " and " +
+        userInput2.value +
+        " love Score is " +
+        loveCalculator() +
+        "%";
+    }
+
+    function loveCalculator(loveScore) {
+      var loveScore = Math.random() * 10;
+      loveScore = Math.floor(loveScore) + 90;
+
+      return loveScore;
+    }
+  </script>
+</html>
